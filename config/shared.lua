@@ -1,167 +1,167 @@
 return {
     finance = {
-        minimumDown = 10, -- minimum percentage allowed down
+        minimumDown = 35, -- minimum percentage allowed down
         maximumPayments = 24, -- maximum payments allowed
         enable = true, -- Enables the financing system. Turning this off does not affect already financed vehicles
-        zone = vec3(-29.53, -1103.67, 26.42), -- Where the finance menu is located
+        zone = vec3(-29.53, -1103.67, 26.42) -- Where the finance menu is located
     },
-
     enableFreeUseBuy = true, -- Allows players to buy from NPC shops
     enableTestDrive = true,
-
     vehicles = {
-
         -- For the configuration below, it would first look for the vehicle in models.
         -- If not found, it would check for the category in categories.
         -- If the category is also not found, it would default to the default settings.
         -- To disable a vehicle from being sold, define it within the blocklist.
-        default = 'pdm',
-
+        default = 'viceluxury',
         categories = {
             boats = 'boats',
             air = 'air',
-            -- super = {'pdm', 'luxury'},
+            compacts = 'pdm',
+            motorcycles = 'bike',
+            cycles = {'pdm', 'bike'},
+            sedans = {'pdm', 'viceluxury'},
+            coupes = {'pdm', 'viceluxury'},
+            suvs = {'pdm', 'viceluxury'},
+            sports = 'viceluxury',
+            sportsclassics = 'viceluxury',
+            super = 'viceluxury'
         },
-
         models = {
-            -- zentorno = {'pdm', 'luxury'},
+            -- zentorno = {'pdm', 'viceluxury'},
 
-            oppressor = 'luxury',
+            -- oppressor = 'viceluxury'
             --- Sports
-            alpha = 'luxury',
-            banshee = 'luxury',
-            bestiagts = 'luxury',
-            buffalo = 'luxury',
-            buffalo2 = 'luxury',
-            carbonizzare = 'luxury',
-            comet2 = 'luxury',
-            comet3 = 'luxury',
-            comet4 = 'luxury',
-            comet5 = 'luxury',
-            coquette = 'luxury',
-            coquette4 = 'luxury',
-            drafter = 'luxury',
-            deveste = 'luxury',
-            elegy = 'luxury',
-            elegy2 = 'luxury',
-            feltzer2 = 'luxury',
-            flashgt = 'luxury',
-            furoregt = 'luxury',
-            gb200 = 'luxury',
-            komoda = 'luxury',
-            imorgon = 'luxury',
-            italigto = 'luxury',
-            jugular = 'luxury',
-            jester = 'luxury',
-            jester2 = 'luxury',
-            jester3 = 'luxury',
-            khamelion = 'luxury',
-            kuruma = 'luxury',
-            kuruma2 = 'luxury',
-            locust = 'luxury',
-            lynx = 'luxury',
-            massacro = 'luxury',
-            massacro2 = 'luxury',
-            neo = 'luxury',
-            neon = 'luxury',
-            ninef = 'luxury',
-            ninef2 = 'luxury',
-            omnis = 'luxury',
-            paragon = 'luxury',
-            pariah = 'luxury',
-            penumbra = 'luxury',
-            penumbra2 = 'luxury',
-            rapidgt = 'luxury',
-            rapidgt2 = 'luxury',
-            raptor = 'luxury',
-            revolter = 'luxury',
-            ruston = 'luxury',
-            schafter3 = 'luxury',
-            schafter4 = 'luxury',
-            schlagen = 'luxury',
-            schwarzer = 'luxury',
-            seven70 = 'luxury',
-            specter = 'luxury',
-            streiter = 'luxury',
-            sugoi = 'luxury',
-            sultan = 'luxury',
-            sultan2 = 'luxury',
-            surano = 'luxury',
-            tropos = 'luxury',
-            verlierer2 = 'luxury',
-            vstr = 'luxury',
-            italirsx = 'luxury',
-            zr350 = 'luxury',
-            calico = 'luxury',
-            futo2 = 'luxury',
-            euros = 'luxury',
-            jester4 = 'luxury',
-            remus = 'luxury',
-            comet6 = 'luxury',
-            growler = 'luxury',
-            vectre = 'luxury',
-            cypher = 'luxury',
-            sultan3 = 'luxury',
-            rt3000 = 'luxury',
-
+            alpha = 'viceluxury',
+            banshee = 'viceluxury',
+            bestiagts = 'viceluxury',
+            buffalo = 'viceluxury',
+            buffalo2 = 'viceluxury',
+            carbonizzare = 'viceluxury',
+            comet2 = 'viceluxury',
+            comet3 = 'viceluxury',
+            comet4 = 'viceluxury',
+            comet5 = 'viceluxury',
+            coquette = 'viceluxury',
+            coquette4 = 'viceluxury',
+            drafter = 'viceluxury',
+            deveste = 'viceluxury',
+            elegy = 'viceluxury',
+            elegy2 = 'viceluxury',
+            feltzer2 = 'viceluxury',
+            flashgt = 'viceluxury',
+            furoregt = 'viceluxury',
+            gb200 = 'viceluxury',
+            komoda = 'viceluxury',
+            imorgon = 'viceluxury',
+            italigto = 'viceluxury',
+            jugular = 'viceluxury',
+            jester = 'viceluxury',
+            jester2 = 'viceluxury',
+            jester3 = 'viceluxury',
+            khamelion = 'viceluxury',
+            kuruma = 'viceluxury',
+            kuruma2 = 'viceluxury',
+            locust = 'viceluxury',
+            lynx = 'viceluxury',
+            massacro = 'viceluxury',
+            massacro2 = 'viceluxury',
+            neo = 'viceluxury',
+            neon = 'viceluxury',
+            ninef = 'viceluxury',
+            ninef2 = 'viceluxury',
+            omnis = 'viceluxury',
+            paragon = 'viceluxury',
+            pariah = 'viceluxury',
+            penumbra = 'viceluxury',
+            penumbra2 = 'viceluxury',
+            rapidgt = 'viceluxury',
+            rapidgt2 = 'viceluxury',
+            raptor = 'viceluxury',
+            revolter = 'viceluxury',
+            ruston = 'viceluxury',
+            schafter3 = 'viceluxury',
+            schafter4 = 'viceluxury',
+            schlagen = 'viceluxury',
+            schwarzer = 'viceluxury',
+            seven70 = 'viceluxury',
+            specter = 'viceluxury',
+            streiter = 'viceluxury',
+            sugoi = 'viceluxury',
+            sultan = 'viceluxury',
+            sultan2 = 'viceluxury',
+            surano = 'viceluxury',
+            tropos = 'viceluxury',
+            verlierer2 = 'viceluxury',
+            vstr = 'viceluxury',
+            italirsx = 'viceluxury',
+            zr350 = 'viceluxury',
+            calico = 'viceluxury',
+            futo2 = 'viceluxury',
+            euros = 'viceluxury',
+            jester4 = 'viceluxury',
+            remus = 'viceluxury',
+            comet6 = 'viceluxury',
+            growler = 'viceluxury',
+            vectre = 'viceluxury',
+            cypher = 'viceluxury',
+            sultan3 = 'viceluxury',
+            rt3000 = 'viceluxury',
             --- Sports Classic
-            cheetah2 = 'luxury',
-
+            cheetah2 = 'viceluxury',
             --- Super
-            adder = 'luxury',
-            autarch = 'luxury',
-            banshee2 = 'luxury',
-            bullet = 'luxury',
-            cheetah = 'luxury',
-            corsita = 'luxury',
-            cyclone = 'luxury',
-            entity2 = 'luxury',
-            entityxf = 'luxury',
-            emerus = 'luxury',
-            fmj = 'luxury',
-            furia = 'luxury',
-            gp1 = 'luxury',
-            infernus = 'luxury',
-            italigtb = 'luxury',
-            italigtb2 = 'luxury',
-            krieger = 'luxury',
-            le7b = 'luxury',
-            lm87 = 'luxury',
-            nero = 'luxury',
-            nero2 = 'luxury',
-            omnisegt = 'luxury',
-            osiris = 'luxury',
-            penetrator = 'luxury',
-            pfister811 = 'luxury',
-            prototipo = 'luxury',
-            reaper = 'luxury',
-            s80 = 'luxury',
-            sc1 = 'luxury',
-            sentinel4 = 'luxury',
-            sheava = 'luxury',
-            sm722 = 'luxury',
-            sultanrs = 'luxury',
-            t20 = 'luxury',
-            taipan = 'luxury',
-            tempesta = 'luxury',
-            tenf = 'luxury',
-            tenf2 = 'luxury',
-            torero2 = 'luxury',
-            tezeract = 'luxury',
-            thrax = 'luxury',
-            tigon = 'luxury',
-            turismor = 'luxury',
-            tyrant = 'luxury',
-            tyrus = 'luxury',
-            vacca = 'luxury',
-            vagner = 'luxury',
-            visione = 'luxury',
-            voltic = 'luxury',
-            voltic2 = 'luxury',
-            xa21 = 'luxury',
-            zentorno = 'luxury',
-            zorrusso = 'luxury',
-
+            adder = 'viceluxury',
+            autarch = 'viceluxury',
+            banshee2 = 'viceluxury',
+            bullet = 'viceluxury',
+            cheetah = 'viceluxury',
+            corsita = 'viceluxury',
+            cyclone = 'viceluxury',
+            entity2 = 'viceluxury',
+            entityxf = 'viceluxury',
+            emerus = 'viceluxury',
+            fmj = 'viceluxury',
+            furia = 'viceluxury',
+            gp1 = 'viceluxury',
+            infernus = 'viceluxury',
+            italigtb = 'viceluxury',
+            italigtb2 = 'viceluxury',
+            krieger = 'viceluxury',
+            le7b = 'viceluxury',
+            lm87 = 'viceluxury',
+            nero = 'viceluxury',
+            nero2 = 'viceluxury',
+            omnisegt = 'viceluxury',
+            osiris = 'viceluxury',
+            penetrator = 'viceluxury',
+            pfister811 = 'viceluxury',
+            prototipo = 'viceluxury',
+            reaper = 'viceluxury',
+            s80 = 'viceluxury',
+            sc1 = 'viceluxury',
+            sentinel4 = 'viceluxury',
+            sheava = 'viceluxury',
+            sm722 = 'viceluxury',
+            sultanrs = 'viceluxury',
+            t20 = 'viceluxury',
+            taipan = 'viceluxury',
+            tempesta = 'viceluxury',
+            tenf = 'viceluxury',
+            tenf2 = 'viceluxury',
+            torero2 = 'viceluxury',
+            tezeract = 'viceluxury',
+            thrax = 'viceluxury',
+            tigon = 'viceluxury',
+            turismor = 'viceluxury',
+            tyrant = 'viceluxury',
+            tyrus = 'viceluxury',
+            vacca = 'viceluxury',
+            vagner = 'viceluxury',
+            visione = 'viceluxury',
+            voltic = 'viceluxury',
+            voltic2 = 'viceluxury',
+            xa21 = 'viceluxury',
+            zentorno = 'viceluxury',
+            zorrusso = 'viceluxury',
             --- Boats
             squalo = 'boats',
             marquis = 'boats',
@@ -181,7 +181,6 @@ return {
             longfin = 'boats',
             toro = 'boats',
             toro2 = 'boats',
-
             --- Helicopters
             buzzard2 = 'air',
             frogger = 'air',
@@ -196,7 +195,6 @@ return {
             supervolito2 = 'air',
             volatus = 'air',
             havok = 'air',
-
             --- Planes
             duster = 'air',
             luxor = 'air',
@@ -211,74 +209,18 @@ return {
             howard = 'air',
             alphaz1 = 'air',
             nimbus = 'air',
-            conada = 'air',
+            conada = 'air'
         },
-
         blocklist = {
             'police',
             'police2',
             'police3',
-            'police4',
+            'police4'
         }
     },
-
     ---@type table<string, Dealership>
     shops = {
         pdm = {
-            type = 'free-use',
-            zone = {
-                shape = {
-                    vec3(-56.727394104004, -1086.2325439453, 26.0),
-                    vec3(-60.612808227539, -1096.7795410156, 26.0),
-                    vec3(-58.26834487915, -1100.572265625, 26.0),
-                    vec3(-35.927803039551, -1109.0034179688, 26.0),
-                    vec3(-34.427627563477, -1108.5111083984, 26.0),
-                    vec3(-32.02657699585, -1101.5877685547, 26.0),
-                    vec3(-33.342102050781, -1101.0377197266, 26.0),
-                    vec3(-31.292987823486, -1095.3717041016, 26.0)
-                },
-                size = vec3(3, 3, 4),
-                targetDistance = 1,
-            },
-            blip = {
-                label = 'Premium Deluxe Motorsport',
-                coords = vec3(-45.67, -1098.34, 26.42),
-                show = true,
-                sprite = 326,
-                color = 3,
-            },
-            categories = {
-                sportsclassics = 'Sports Classics',
-                sedans = 'Sedans',
-                coupes = 'Coupes',
-                suvs = 'SUVs',
-                offroad = 'Offroad',
-                muscle = 'Muscle',
-                compacts = 'Compacts',
-                motorcycles = 'Motorcycles',
-                vans = 'Vans',
-                cycles = 'Bicycles'
-            },
-            testDrive = {
-                limit = 5.0,
-                spawn = vec4(-7.84, -1081.35, 26.67, 121.83),
-                endBehavior = 'return'
-            },
-            returnLocation = vec3(-44.74, -1082.58, 26.68),
-            vehicleSpawn = vec4(-31.69, -1090.78, 26.42, 328.79),
-            showroomVehicles = {
-                [1] = {coords = vec4(-45.65, -1093.66, 25.44, 69.5), vehicle = 'adder'},
-                [2] = {coords = vec4(-48.27, -1101.86, 25.44, 294.5), vehicle = 'schafter2'},
-                [3] = {coords = vec4(-39.6, -1096.01, 25.44, 66.5), vehicle = 'comet2'},
-                [4] = {coords = vec4(-51.21, -1096.77, 25.44, 254.5), vehicle = 'vigero'},
-                [5] = {coords = vec4(-40.18, -1104.13, 25.44, 338.5), vehicle = 't20'},
-                [6] = {coords = vec4(-43.31, -1099.02, 25.44, 52.5), vehicle = 'bati'},
-                [7] = {coords = vec4(-50.66, -1093.05, 25.44, 222.5), vehicle = 'bati'},
-                [8] = {coords = vec4(-44.28, -1102.47, 25.44, 298.5), vehicle = 'bati'}
-            },
-        },
-
-        luxury = {
             type = 'managed',
             job = 'cardealer',
             zone = {
@@ -294,18 +236,18 @@ return {
                     vec3(-1252.9503173828, -345.85726928711, 36.91)
                 },
                 size = vec3(3, 3, 4),
-                targetDistance = 1,
+                targetDistance = 1
             },
             blip = {
-                label = 'Luxury Vehicle Shop',
+                label = 'City Car Dealership',
                 coords = vec3(-1255.6, -361.16, 36.91),
                 show = true,
                 sprite = 326,
-                color = 3,
+                color = 16
             },
             categories = {
-                super = 'Super',
-                sports = 'Sports'
+                compacts = 'Compacts',
+                cycles = 'Bicycles'
             },
             testDrive = {
                 limit = 5.0,
@@ -315,17 +257,178 @@ return {
             returnLocation = vec3(-1231.46, -349.86, 37.33),
             vehicleSpawn = vec4(-1231.46, -349.86, 37.33, 26.61),
             showroomVehicles = {
-                [1] = {coords = vec4(-1265.31, -354.44, 35.91, 205.08), vehicle = 'italirsx'},
-                [2] = {coords = vec4(-1270.06, -358.55, 35.91, 247.08), vehicle = 'italigtb'},
-                [3] = {coords = vec4(-1269.21, -365.03, 35.91, 297.12), vehicle = 'nero'},
-                [4] = {coords = vec4(-1252.07, -364.2, 35.91, 56.44), vehicle = 'bati'},
-                [5] = {coords = vec4(-1255.49, -365.91, 35.91, 55.63), vehicle = 'carbonrs'},
-                [6] = {coords = vec4(-1249.21, -362.97, 35.91, 53.24), vehicle = 'hexer'},
+                [1] = {
+                    coords = vec4(-1265.31, -354.44, 35.91, 205.08),
+                    vehicle = 'panto'
+                },
+                [2] = {
+                    coords = vec4(-1270.06, -358.55, 35.91, 247.08),
+                    vehicle = 'issi2'
+                },
+                [3] = {
+                    coords = vec4(-1269.21, -365.03, 35.91, 297.12),
+                    vehicle = 'issi3'
+                },
+                [4] = {
+                    coords = vec4(-1252.07, -364.2, 35.91, 56.44),
+                    vehicle = 'panto'
+                },
+                [5] = {
+                    coords = vec4(-1255.49, -365.91, 35.91, 55.63),
+                    vehicle = 'issi3'
+                },
+                [6] = {
+                    coords = vec4(-1249.21, -362.97, 35.91, 53.24),
+                    vehicle = 'bmx'
+                }
             }
         },
-
+        viceluxury = {
+            type = 'managed',
+            job = 'viceluxury',
+            zone = {
+                shape = {
+                    vec3(-332.54, -827.55, 31.56),
+                    vec3(-298.11, -833.82, 31.56),
+                    vec3(-295.15, -833.76, 31.56),
+                    vec3(-290.37, -828.97, 31.56),
+                    vec3(-277.54, -796.40, 31.56),
+                    vec3(-298.90, -780.41, 31.56),
+                    vec3(-305.86, -777.75, 31.56),
+                    vec3(-306.44, -776.76, 31.56),
+                    vec3(-319.87, -772.22, 31.56),
+                    vec3(-335.67, -787.27, 31.56)
+                },
+                size = vec3(3, 3, 4),
+                targetDistance = 1
+            },
+            blip = {
+                label = 'Vice Car Dealership',
+                coords = vec3(-316.78, -835.05, 31.64),
+                show = true,
+                sprite = 820,
+                color = 66
+            },
+            categories = {
+                sedans = 'Sedans',
+                coupes = 'Coupes',
+                suvs = 'SUVs',
+                sports = 'Sports',
+                sportsclassics = 'Sports Classics',
+                super = 'Super'
+            },
+            testDrive = {
+                limit = 3.0,
+                spawn = vec4(-304.10, -784.48, 33.22, 340.0),
+                endBehavior = 'return'
+            },
+            returnLocation = vec3(-295.15, -777.52, 33.97),
+            vehicleSpawn = vec4(-304.10, -784.48, 33.22, 340.0),
+            showroomVehicles = {
+                [1] = {
+                    coords = vec4(-302.90, -798.52, 31.87, 340.0),
+                    vehicle = 'zr350'
+                },
+                [2] = {
+                    coords = vec4(-305.84, -806.32, 31.87, 340.0),
+                    vehicle = 'italigto'
+                },
+                [3] = {
+                    coords = vec4(-291.67, -797.27, 31.87, 340.0),
+                    vehicle = 'neo'
+                },
+                [4] = {
+                    coords = vec4(-294.91, -805.92, 31.87, 340.0),
+                    vehicle = 'cheetah2'
+                },
+                [5] = {
+                    coords = vec4(-297.88, -814.01, 31.87, 340.0),
+                    vehicle = 'bullet'
+                },
+                [6] = {
+                    coords = vec4(-308.01, -818.31, 31.87, 70.0),
+                    vehicle = 'ignus'
+                }
+            }
+        },
+        bike = {
+            type = 'managed',
+            job = 'bikedealer',
+            zone = {
+                shape = {
+                    vec3(-853.64, -206.40, 36.5),
+                    vec3(-871.38, -176.03, 36.5),
+                    vec3(-888.16, -184.63, 36.5),
+                    vec3(-876.63, -206.87, 36.5),
+                    vec3(-866.36, -208.98, 36.5),
+                    vec3(-858.24, -208.59, 36.5)
+                },
+                size = vec3(8, 8, 6),
+                targetDistance = 10
+            },
+            blip = {
+                label = 'Bike Dealership',
+                coords = vec3(-859.67, -189.68, 37.65),
+                show = true,
+                sprite = 522,
+                color = 35
+            },
+            categories = {
+                motorcycles = 'Motorcycles'
+            },
+            testDrive = {
+                limit = 5.0,
+                spawn = vec4(-853.59, -209.13, 36.88, 300.0),
+                endBehavior = 'return'
+            },
+            returnLocation = vec3(-862.04, -210.68, 37.90),
+            vehicleSpawn = vec4(-853.59, -209.13, 36.88, 300.0),
+            showroomVehicles = {
+                [1] = {
+                    coords = vec4(-876.89, -193.82, 36.855, 335.0),
+                    vehicle = 'bati'
+                },
+                [2] = {
+                    coords = vec4(-878.39, -191.21, 36.855, 335.0),
+                    vehicle = 'bati'
+                },
+                [3] = {
+                    coords = vec4(-879.95, -188.53, 36.855, 335.0),
+                    vehicle = 'bati'
+                },
+                [4] = {
+                    coords = vec4(-876.40, -183.70, 36.855, 155.0),
+                    vehicle = 'bati'
+                },
+                [5] = {
+                    coords = vec4(-871.92, -184.48, 36.855, 155.0),
+                    vehicle = 'bati'
+                },
+                [6] = {
+                    coords = vec4(-870.40, -187.00, 36.855, 155.0),
+                    vehicle = 'bati'
+                },
+                [7] = {
+                    coords = vec4(-868.75, -189.55, 36.855, 155.0),
+                    vehicle = 'bati'
+                },
+                [8] = {
+                    coords = vec4(-864.08, -198.07, 36.855, 155.0),
+                    vehicle = 'bati'
+                },
+                [9] = {
+                    coords = vec4(-862.61, -200.05, 36.85, 155.0),
+                    vehicle = 'bati'
+                },
+                [10] = {
+                    coords = vec4(-861.24, -202.32, 36.85, 155.0),
+                    vehicle = 'bati'
+                }
+            }
+        },
         boats = {
-            type = 'free-use',
+            type = 'managed',
+            job = 'boatdealer',
             zone = {
                 shape = {
                     vec3(-729.39, -1315.84, 0),
@@ -334,14 +437,14 @@ return {
                     vec3(-716.94, -1326.88, 0)
                 },
                 size = vec3(8, 8, 6),
-                targetDistance = 10,
+                targetDistance = 10
             },
             blip = {
                 label = 'Marina Shop',
                 coords = vec3(-738.25, -1334.38, 1.6),
                 show = true,
                 sprite = 410,
-                color = 3,
+                color = 3
             },
             categories = {
                 boats = 'Boats'
@@ -357,12 +460,12 @@ return {
                 [1] = {coords = vec4(-727.05, -1326.59, -0.50, 229.5), vehicle = 'seashark'},
                 [2] = {coords = vec4(-732.84, -1333.5, -0.50, 229.5), vehicle = 'dinghy'},
                 [3] = {coords = vec4(-737.84, -1340.83, -0.50, 229.5), vehicle = 'speeder'},
-                [4] = {coords = vec4(-741.53, -1349.7, -0.50, 229.5), vehicle = 'marquis'},
-            },
+                [4] = {coords = vec4(-741.53, -1349.7, -0.50, 229.5), vehicle = 'marquis'}
+            }
         },
-
         air = {
-            type = 'free-use',
+            type = 'managed',
+            job = 'jetbroker',
             zone = {
                 shape = {
                     vec3(-1607.58, -3141.7, 12.99),
@@ -371,14 +474,14 @@ return {
                     vec3(-1646.03, -3190.84, 12.99)
                 },
                 size = vec3(10, 10, 8),
-                targetDistance = 5,
+                targetDistance = 5
             },
             blip = {
                 label = 'Air Shop',
                 coords = vec3(-1652.76, -3143.4, 13.99),
                 show = true,
                 sprite = 251,
-                color = 3,
+                color = 3
             },
             categories = {
                 helicopters = 'Helicopters',
@@ -395,8 +498,8 @@ return {
                 [1] = {coords = vec4(-1651.36, -3162.66, 12.99, 346.89), vehicle = 'volatus'},
                 [2] = {coords = vec4(-1668.53, -3152.56, 12.99, 303.22), vehicle = 'luxor2'},
                 [3] = {coords = vec4(-1632.02, -3144.48, 12.99, 31.08), vehicle = 'nimbus'},
-                [4] = {coords = vec4(-1663.74, -3126.32, 12.99, 275.03), vehicle = 'frogger'},
-            },
-        },
-    },
+                [4] = {coords = vec4(-1663.74, -3126.32, 12.99, 275.03), vehicle = 'frogger'}
+            }
+        }
+    }
 }
