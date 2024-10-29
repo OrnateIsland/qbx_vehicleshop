@@ -32,7 +32,7 @@ RegisterNetEvent('qbx_vehicleshop:server:testDrive', function(data)
     end
 
     local testDrive = sharedConfig.shops[shopId].testDrive
-    local plate = 'TEST'..lib.string.random('1111')
+    local plate = 'TEST' .. lib.string.random('1111')
 
     local netId = SpawnVehicle(src, {
         modelName = data.vehicle,
@@ -118,9 +118,11 @@ RegisterNetEvent('qbx_vehicleshop:server:buyShowroomVehicle', function(vehicleDa
         return exports.qbx_core:Notify(src, locale('error.notenoughmoney'), 'error')
     end
 
+    local vin = exports.vms_cityhall:GenerateVIN()
     local vehicleId = exports.qbx_vehicles:CreatePlayerVehicle({
         model = vehicle,
         citizenid = player.PlayerData.citizenid,
+        vin = vin
     })
 
     exports.qbx_core:Notify(src, locale('success.purchased'), 'success')
@@ -182,9 +184,11 @@ RegisterNetEvent('qbx_vehicleshop:server:sellShowroomVehicle', function(vehicle,
 
     if not SellShowroomVehicleTransact(src, target, vehiclePrice, vehiclePrice) then return end
 
+    local vin = exports.vms_cityhall:GenerateVIN()
     local vehicleId = exports.qbx_vehicles:CreatePlayerVehicle({
         model = vehicle,
         citizenid = cid,
+        vin = vin
     })
 
     SpawnVehicle(src, {
@@ -234,7 +238,8 @@ lib.addCommand('transfervehicle', {
         return exports.qbx_core:Notify(source, locale('error.notinveh'), 'error')
     end
 
-    local vehicleId = Entity(vehicle).state.vehicleid or exports.qbx_vehicles:GetVehicleIdByPlate(GetVehicleNumberPlateText(vehicle))
+    local vehicleId = Entity(vehicle).state.vehicleid or
+        exports.qbx_vehicles:GetVehicleIdByPlate(GetVehicleNumberPlateText(vehicle))
     if not vehicleId then
         return exports.qbx_core:Notify(source, locale('error.notowned'), 'error')
     end
@@ -284,7 +289,8 @@ lib.addCommand('transfervehicle', {
         end
 
         if sellAmount > 0 then
-            local currencyType = FindChargeableCurrencyType(sellAmount, target.PlayerData.money.cash, target.PlayerData.money.bank)
+            local currencyType = FindChargeableCurrencyType(sellAmount, target.PlayerData.money.cash,
+                target.PlayerData.money.bank)
 
             if not currencyType then
                 return exports.qbx_core:Notify(source, locale('error.buyertoopoor'), 'error')
@@ -297,8 +303,10 @@ lib.addCommand('transfervehicle', {
         exports.qbx_vehicles:SetPlayerVehicleOwner(row.id, targetcid)
         config.giveKeys(buyerId, row.plate, vehicle)
 
-        local sellerMessage = sellAmount > 0 and locale('success.soldfor') .. lib.math.groupdigits(sellAmount) or locale('success.gifted')
-        local buyerMessage = sellAmount > 0 and locale('success.boughtfor') .. lib.math.groupdigits(sellAmount) or locale('success.received_gift')
+        local sellerMessage = sellAmount > 0 and locale('success.soldfor') .. lib.math.groupdigits(sellAmount) or
+            locale('success.gifted')
+        local buyerMessage = sellAmount > 0 and locale('success.boughtfor') .. lib.math.groupdigits(sellAmount) or
+            locale('success.received_gift')
 
         exports.qbx_core:Notify(source, sellerMessage, 'success')
         exports.qbx_core:Notify(buyerId, buyerMessage, 'success')

@@ -2,18 +2,22 @@
 local function insertVehicleEntityWithFinance(request)
     local insertVehicleEntityRequest = request.insertVehicleEntityRequest
     local vehicleFinance = request.vehicleFinance
+    local vin = exports.vms_cityhall:GenerateVIN()
     local vehicleId = exports.qbx_vehicles:CreatePlayerVehicle({
         model = insertVehicleEntityRequest.model,
         citizenid = insertVehicleEntityRequest.citizenId,
+        vin = vin
     })
 
-    MySQL.insert('INSERT INTO vehicle_financing (vehicleId, balance, paymentamount, paymentsleft, financetime) VALUES (?, ?, ?, ?, ?)', {
-        vehicleId,
-        vehicleFinance.balance,
-        vehicleFinance.payment,
-        vehicleFinance.paymentsLeft,
-        vehicleFinance.timer
-    })
+    MySQL.insert(
+        'INSERT INTO vehicle_financing (vehicleId, balance, paymentamount, paymentsleft, financetime) VALUES (?, ?, ?, ?, ?)',
+        {
+            vehicleId,
+            vehicleFinance.balance,
+            vehicleFinance.payment,
+            vehicleFinance.paymentsLeft,
+            vehicleFinance.timer
+        })
 
     return vehicleId
 end
@@ -21,7 +25,7 @@ end
 ---@param time number
 ---@param vehicleId integer
 local function updateVehicleEntityFinanceTime(time, vehicleId)
-    MySQL.update('UPDATE vehicle_financing SET financetime = ? WHERE vehicleId = ?', {time, vehicleId})
+    MySQL.update('UPDATE vehicle_financing SET financetime = ? WHERE vehicleId = ?', { time, vehicleId })
 end
 
 ---@param vehicleFinance VehicleFinanceServer
@@ -32,20 +36,23 @@ local function updateVehicleFinance(vehicleFinance, vehicleId)
             vehicleId
         })
     else
-        MySQL.update('UPDATE vehicle_financing AS vf INNER JOIN player_vehicles AS pv ON vf.vehicleId = pv.id SET vf.balance = ?, vf.paymentamount = ?, vf.paymentsleft = ?, vf.financetime = ? WHERE pv.id = ?', {
-            vehicleFinance.balance,
-            vehicleFinance.payment,
-            vehicleFinance.paymentsLeft,
-            vehicleFinance.timer,
-            vehicleId
-        })
+        MySQL.update(
+            'UPDATE vehicle_financing AS vf INNER JOIN player_vehicles AS pv ON vf.vehicleId = pv.id SET vf.balance = ?, vf.paymentamount = ?, vf.paymentsleft = ?, vf.financetime = ? WHERE pv.id = ?',
+            {
+                vehicleFinance.balance,
+                vehicleFinance.payment,
+                vehicleFinance.paymentsLeft,
+                vehicleFinance.timer,
+                vehicleId
+            })
     end
 end
 
 ---@param id integer
 ---@return VehicleFinancingEntity
 local function fetchFinancedVehicleEntityById(id)
-    return MySQL.single.await('SELECT * FROM vehicle_financing WHERE vehicleId = ? AND balance > 0 AND financetime > 1 LIMIT 1', {id})
+    return MySQL.single.await(
+        'SELECT * FROM vehicle_financing WHERE vehicleId = ? AND balance > 0 AND financetime > 1 LIMIT 1', { id })
 end
 
 ---@param vehicleId integer
@@ -59,13 +66,17 @@ end
 ---@param citizenid string
 ---@return boolean
 local function hasFinancedVehicles(citizenid)
-    return MySQL.scalar.await('SELECT 1 FROM vehicle_financing AS vf INNER JOIN player_vehicles AS pv ON pv.id = vf.vehicleId WHERE pv.citizenid = ? AND vf.balance > 0 LIMIT 1', {citizenid}) ~= nil
+    return MySQL.scalar.await(
+        'SELECT 1 FROM vehicle_financing AS vf INNER JOIN player_vehicles AS pv ON pv.id = vf.vehicleId WHERE pv.citizenid = ? AND vf.balance > 0 LIMIT 1',
+        { citizenid }) ~= nil
 end
 
 ---@param citizenId string
 ---@return VehicleFinancingEntity[]
 local function fetchFinancedVehicleEntitiesByCitizenId(citizenId)
-    return MySQL.query.await('SELECT vf.* FROM vehicle_financing AS vf INNER JOIN player_vehicles AS pv ON pv.citizenid = ? WHERE vf.vehicleId = pv.id AND vf.balance > 0', {citizenId})
+    return MySQL.query.await(
+        'SELECT vf.* FROM vehicle_financing AS vf INNER JOIN player_vehicles AS pv ON pv.citizenid = ? WHERE vf.vehicleId = pv.id AND vf.balance > 0',
+        { citizenId })
 end
 
 return {
